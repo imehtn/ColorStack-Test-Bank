@@ -1,0 +1,35 @@
+.home-page { min-height:calc(100vh - 72px); }
+.home-hero { padding:64px 20px; background: linear-gradient(135deg, #fef2f0 0%, #fff5f2 50%, #ffffff 100%); display:flex; align-items:center; }
+.home-container { max-width:1100px; margin:0 auto; width:100% }
+.home-title { font-size:48px; margin:0 0 12px; color:#1e293b; font-weight:700; letter-spacing:-1px }
+.home-sub { margin:0 0 24px; color:#64748b; max-width:700px; font-size:18px; line-height:1.7 }
+.home-actions { display:flex; gap:12px; margin-bottom:20px }
+.home-btn { padding:14px 24px; border-radius:10px; text-decoration:none; display:inline-block; font-weight:600; transition:all 0.3s ease; font-size:15px }
+.home-btn.primary { background:linear-gradient(135deg, #de2f10 0%, #c42810 100%); color:#fff; box-shadow:0 4px 16px rgba(222,47,16,0.25) }
+.home-btn.primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(222,47,16,0.35) }
+.home-btn.outline { border:2px solid #de2f10; color:#de2f10; background:transparent }
+.home-btn.outline:hover { background:#de2f10; color:#fff }
+
+.exams-section { padding:48px 20px; background:#fff }
+.exams-container { max-width:1100px; margin:0 auto }
+.exams-container h2 { margin:0 0 24px; color:#1e293b; font-size:28px; font-weight:700 }
+
+.search-filters { display:flex; gap:12px; margin-bottom:28px }
+.search-input { flex:1; padding:14px 16px; border:2px solid #e2e8f0; border-radius:10px; font-size:15px; transition:all 0.2s ease; background:#f8fafc }
+.search-input:focus { outline:none; border-color:#de2f10; background:#fff; box-shadow:0 0 0 3px rgba(222,47,16,0.1) }
+
+.exams-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:20px }
+.exam-card { background:#fff; padding:20px; border-radius:12px; border:1px solid #e2e8f0; box-shadow:0 2px 8px rgba(0,0,0,0.06); display:flex; flex-direction:column; gap:10px; transition:all 0.3s ease }
+.exam-card:hover { transform:translateY(-4px); box-shadow:0 8px 24px rgba(0,0,0,0.12); border-color:#de2f10 }
+.exam-course { margin:0; font-size:18px; color:#1e293b; font-weight:700 }
+.exam-info { margin:0; font-size:14px; color:#64748b; display:flex; align-items:center; gap:4px }
+.download-btn { display:inline-block; padding:10px 16px; background:linear-gradient(135deg, #de2f10 0%, #c42810 100%); color:#fff; text-decoration:none; border-radius:8px; font-size:14px; text-align:center; margin-top:8px; font-weight:600; transition:all 0.3s ease }
+.download-btn:hover { transform:translateY(-2px); box-shadow:0 4px 12px rgba(222,47,16,0.3) }
+.no-exams { text-align:center; color:#64748b; padding:48px 0; font-size:16px }
+
+@media (max-width:820px){
+	.home-hero { padding:40px 12px }
+	.home-title { font-size:28px }
+	.search-filters { flex-direction:column }
+	.exams-grid { grid-template-columns:1fr }
+}

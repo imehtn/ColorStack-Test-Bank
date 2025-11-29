@@ -1,0 +1,21 @@
+.leaderboard-page { padding:48px 20px; display:flex; justify-content:center; min-height:calc(100vh - 72px); background:linear-gradient(135deg, #fef2f0 0%, #ffffff 100%) }
+.leaderboard-container { width:100%; max-width:900px; background:#fff; padding:36px; border-radius:16px; box-shadow:0 12px 40px rgba(0,0,0,0.1); border:1px solid #e2e8f0 }
+.leaderboard-container h2 { margin:0 0 8px; color:#1e293b; font-size:28px; font-weight:700 }
+.subtitle { color:#64748b; margin:0 0 24px; font-size:15px }
+
+.semester-selector { margin:24px 0; }
+.semester-selector label { display:flex; flex-direction:column; gap:8px; font-size:14px; color:#1e293b; font-weight:600 }
+.semester-dropdown { padding:12px 16px; border:2px solid #e2e8f0; border-radius:10px; font-size:15px; background:#f8fafc; cursor:pointer; transition:all 0.2s ease; font-weight:500 }
+.semester-dropdown:focus { outline:none; border-color:#de2f10; background:#fff; box-shadow:0 0 0 3px rgba(222,47,16,0.1) }
+
+.leaderboard-table { width:100%; border-collapse:separate; border-spacing:0; margin-top:20px; font-size:15px; border-radius:10px; overflow:hidden }
+.leaderboard-table th, .leaderboard-table td { text-align:left; padding:14px 16px; }
+.leaderboard-table thead th { background:linear-gradient(135deg, #fef2f0 0%, #fff5f2 100%); color:#1e293b; font-weight:700; border-bottom:2px solid #e2e8f0 }
+.leaderboard-table tbody tr { border-bottom:1px solid #f1f5f9; transition:all 0.2s ease }
+.leaderboard-table tbody tr:hover { background:#fef2f0; transform:scale(1.01) }
+.leaderboard-table tbody tr:last-child { border-bottom:none }
+
+@media (max-width:800px){
+  .leaderboard-container { padding:18px }
+  .leaderboard-table th, .leaderboard-table td { padding:10px }
+}
