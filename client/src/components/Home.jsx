@@ -68,14 +68,14 @@ const Home = () => {
           <div className='search-filters'>
             <input 
               type='text' 
-              placeholder='Search by course (e.g., CS 161)' 
+              placeholder='Search by course (e.g., CSE 2221)' 
               value={searchCourse}
               onChange={(e) => setSearchCourse(e.target.value)}
               className='search-input'
             />
             <input 
               type='text' 
-              placeholder='Search by semester (e.g., Fall 2024)' 
+              placeholder='Search by semester (e.g., Fall 2025)' 
               value={searchSemester}
               onChange={(e) => setSearchSemester(e.target.value)}
               className='search-input'
@@ -94,7 +94,7 @@ const Home = () => {
                   <p className='exam-info'>{exam.semester}</p>
                   <p className='exam-info'>{exam.exam_type || 'Exam'}</p>
                   {exam.comments && (
-                    <p className='exam-comments'>{exam.comments}</p>
+                    <p className='exam-info'>Additional information from uploader: {exam.comments}</p>
                   )}
                   <a 
                     href={exam.file_url} 
