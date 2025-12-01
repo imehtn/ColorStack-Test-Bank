@@ -94,7 +94,7 @@ const Home = () => {
                   <p className='exam-info'>{exam.semester}</p>
                   <p className='exam-info'>{exam.exam_type || 'Exam'}</p>
                   {exam.comments && (
-                    <p className='exam-info'>Additional information from uploader: {exam.comments}</p>
+                    <p className='exam-info'>Other info: {exam.comments}</p>
                   )}
                   <a 
                     href={exam.file_url} 
