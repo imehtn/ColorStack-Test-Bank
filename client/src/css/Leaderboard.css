@@ -42,13 +42,13 @@
   .semester-selector label { font-size:16px; gap:10px; }
   .semester-dropdown { font-size:16px; padding:12px 16px; border-radius:10px; -webkit-tap-highlight-color:transparent; }
   
-  .leaderboard-table { font-size:14px; display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:24px; border-radius:12px; }
-  .leaderboard-table thead, .leaderboard-table tbody, .leaderboard-table tr { display:table; width:100%; table-layout:fixed; min-width:500px; }
-  .leaderboard-table th, .leaderboard-table td { padding:14px 10px; font-size:14px; white-space:nowrap; }
-  .leaderboard-table thead th { font-size:15px; padding:16px 10px; }
-  .leaderboard-table th:nth-child(1), .leaderboard-table td:nth-child(1) { width:60px }
-  .leaderboard-table th:nth-child(2), .leaderboard-table td:nth-child(2) { width:30%; min-width:120px; }
-  .leaderboard-table th:nth-child(3), .leaderboard-table td:nth-child(3) { width:45%; min-width:180px; overflow:hidden; text-overflow:ellipsis; }
-  .leaderboard-table th:nth-child(4), .leaderboard-table td:nth-child(4) { width:80px; text-align:center }
+  .leaderboard-table { font-size:13px; display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:24px; border-radius:12px; }
+  .leaderboard-table thead, .leaderboard-table tbody, .leaderboard-table tr { display:table; width:100%; table-layout:fixed; min-width:600px; }
+  .leaderboard-table th, .leaderboard-table td { padding:12px 8px; font-size:13px; white-space:normal; word-wrap:break-word; }
+  .leaderboard-table thead th { font-size:14px; padding:14px 8px; }
+  .leaderboard-table th:nth-child(1), .leaderboard-table td:nth-child(1) { width:50px; text-align:center; }
+  .leaderboard-table th:nth-child(2), .leaderboard-table td:nth-child(2) { width:140px; min-width:140px; }
+  .leaderboard-table th:nth-child(3), .leaderboard-table td:nth-child(3) { width:220px; min-width:220px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .leaderboard-table th:nth-child(4), .leaderboard-table td:nth-child(4) { width:70px; text-align:center; }
   .leaderboard-table tbody tr:hover { transform:none; }
 }
