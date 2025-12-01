@@ -83,7 +83,7 @@ const Home = () => {
           </div>
 
           {filteredExams.length === 0 && !fetchError && (
-            <p className='no-exams'>No exams found. Be the first to upload!</p>
+            <p className='no-exams'>No exams found.</p>
           )}
 
           {filteredExams.length > 0 && (
