@@ -3,11 +3,12 @@ import '../css/Upload.css'
 import supabase from '../supabaseClient'
 
 const Upload = () => {
-  const [form, setForm] = useState({ course: '', semester: '', email: '', name: '', exam_type: '' })
+  const [form, setForm] = useState({ course: '', semester: '', email: '', name: '', exam_type: '', comments: '' })
   const [customCourse, setCustomCourse] = useState('')
   const [file, setFile] = useState(null)
   const [uploading, setUploading] = useState(false)
   const [error, setError] = useState(null)
+  const [showSuccess, setShowSuccess] = useState(false)
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value })
   const handleFile = e => setFile(e.target.files[0])
@@ -47,13 +48,14 @@ const Upload = () => {
           uploader_email: form.email,
           file_name: file.name,
           file_url: publicUrl,
-          file_size: file.size
+          file_size: file.size,
+          comments: form.comments || null
         })
 
       if (dbError) throw dbError
 
-      alert('Upload successful — thank you for contributing!')
-      setForm({ course: '', semester: '', email: '', name: '', exam_type: '' })
+      setShowSuccess(true)
+      setForm({ course: '', semester: '', email: '', name: '', exam_type: '', comments: '' })
       setCustomCourse('')
       setFile(null)
       e.target.reset()
@@ -119,6 +121,15 @@ const Upload = () => {
           <label>File
             <input name='file' type='file' accept='.pdf,.png,.jpg' onChange={handleFile} required />
           </label>
+          <label>Additional Comments
+            <textarea 
+              name='comments' 
+              value={form.comments} 
+              onChange={handleChange} 
+              placeholder='Any additional notes about this exam (e.g. midterm #, professor, curved/not curved)'
+              rows='3'
+            />
+          </label>
           <div className='form-actions'>
             <button className='btn primary' type='submit' disabled={uploading}>
               {uploading ? 'Uploading...' : 'Upload'}
@@ -126,6 +137,17 @@ const Upload = () => {
           </div>
         </form>
       </div>
+
+      {showSuccess && (
+        <div className='success-modal-overlay' onClick={() => setShowSuccess(false)}>
+          <div className='success-modal' onClick={(e) => e.stopPropagation()}>
+            <div className='success-icon'>✓</div>
+            <h3>Upload Successful!</h3>
+            <p>ColorStack OSU thanks you for contributing to our test bank. Your exam will help fellow students prepare and succeed.</p>
+            <button className='btn primary' onClick={() => setShowSuccess(false)}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
