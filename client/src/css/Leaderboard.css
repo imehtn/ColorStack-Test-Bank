@@ -16,21 +16,6 @@
 .leaderboard-table tbody tr:last-child { border-bottom:none }
 
 @media (max-width:800px){
-  .leaderboard-page { padding:24px 12px }
-  .leaderboard-container { padding:20px }
-  .leaderboard-container h2 { font-size:24px }
-  .subtitle { font-size:14px; margin:0 0 16px }
-  .semester-selector { margin:16px 0 }
-  .leaderboard-table { font-size:13px; overflow-x:auto; display:block }
-  .leaderboard-table th, .leaderboard-table td { padding:10px 8px; font-size:13px }
-  .leaderboard-table thead, .leaderboard-table tbody, .leaderboard-table tr { display:block }
-  .leaderboard-table thead { position:sticky; top:0; background:#fff }
-  .leaderboard-table tr:hover { transform:none }
-}
-
-@media (max-width:480px){
-  .leaderboard-container { padding:16px }
-  .leaderboard-container h2 { font-size:20px }
-  .leaderboard-table { font-size:12px }
-  .leaderboard-table th, .leaderboard-table td { padding:8px 6px; font-size:12px }
+  .leaderboard-container { padding:18px }
+  .leaderboard-table th, .leaderboard-table td { padding:10px }
 }
