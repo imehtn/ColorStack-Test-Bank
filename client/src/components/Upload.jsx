@@ -121,12 +121,12 @@ const Upload = () => {
           <label>File
             <input name='file' type='file' accept='.pdf,.png,.jpg' onChange={handleFile} required />
           </label>
-          <label>Additional Comments
+          <label>Additional Comments (Optional)
             <textarea 
               name='comments' 
               value={form.comments} 
               onChange={handleChange} 
-              placeholder='Any additional notes about this exam (e.g. midterm #, professor, curved/not curved)'
+              placeholder='Any additional notes about this exam (e.g. midterm #, professor, curved/not curved, etc)'
               rows='3'
             />
           </label>

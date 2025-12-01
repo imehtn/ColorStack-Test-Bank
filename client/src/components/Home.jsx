@@ -93,6 +93,9 @@ const Home = () => {
                   <h3 className='exam-course'>{exam.course}</h3>
                   <p className='exam-info'>{exam.semester}</p>
                   <p className='exam-info'>{exam.exam_type || 'Exam'}</p>
+                  {exam.comments && (
+                    <p className='exam-comments'>{exam.comments}</p>
+                  )}
                   <a 
                     href={exam.file_url} 
                     target='_blank' 

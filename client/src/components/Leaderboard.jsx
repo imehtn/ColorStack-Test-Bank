@@ -57,10 +57,11 @@ const Leaderboard = () => {
           return uploadSemester === selectedSemester
         })
 
-        // Group by uploader and count
+        // Group by uploader and count (case-insensitive email)
         const counts = {}
         filteredData.forEach(upload => {
-          const key = `${upload.uploader_name}::${upload.uploader_email}`
+          const normalizedEmail = upload.uploader_email.toLowerCase()
+          const key = `${upload.uploader_name}::${normalizedEmail}`
           counts[key] = (counts[key] || 0) + 1
         })
 
