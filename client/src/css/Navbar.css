@@ -3,19 +3,23 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 16px 24px;
-	background: linear-gradient(135deg, #de2f10 0%, #c42810 100%);
+	background: linear-gradient(135deg, #f9f6f6 10%, #c42810 100%);
 	color: #fff;
 	box-shadow: 0 2px 8px rgba(222,47,16,0.2);
 }
-.brand {
-	color: #fff;
-	font-weight: 700;
+.navbar-brand {
+	display: flex;
+	align-items: center;
 	text-decoration: none;
-	font-size: 20px;
-	letter-spacing: -0.5px;
 	transition: all 0.2s ease;
 }
-.brand:hover { transform: translateY(-1px); }
+.navbar-brand:hover { transform: translateY(-1px); }
+.navbar-logo {
+	height: 60px;
+	margin-left: 20px;
+	width: auto;
+	display: block;
+}
 .navbar-right { display:flex; gap:12px; align-items:right }
 .navbar-link { color:#fff; text-decoration:none; padding:10px 16px; border-radius:8px; font-size:14px; font-weight:500; transition:all 0.2s ease; -webkit-tap-highlight-color:transparent; user-select:none }
 .navbar-link:hover { background:rgba(255,255,255,0.15); transform:translateY(-1px) }
@@ -31,5 +35,5 @@
 @media (max-width:720px){
 	.navbar { padding:12px 14px }
 	.navbar-right { gap:8px }
-	.brand { font-size:16px }
+	.navbar-logo { height:32px }
 }
