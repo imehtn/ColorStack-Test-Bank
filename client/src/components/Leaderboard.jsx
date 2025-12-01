@@ -122,10 +122,10 @@ const Leaderboard = () => {
             <tbody>
               {leaders.map((leader, index) => (
                 <tr key={leader.email}>
-                  <td data-label="Rank">{index + 1}</td>
-                  <td data-label="Name">{leader.name}</td>
-                  <td data-label="Email">{leader.email}</td>
-                  <td data-label="Uploads">{leader.count}</td>
+                  <td>{index + 1}</td>
+                  <td>{leader.name}</td>
+                  <td>{leader.email}</td>
+                  <td>{leader.count}</td>
                 </tr>
               ))}
             </tbody>
