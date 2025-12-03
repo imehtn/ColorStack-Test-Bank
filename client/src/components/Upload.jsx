@@ -5,6 +5,7 @@ import supabase from '../supabaseClient'
 const Upload = () => {
   const [form, setForm] = useState({ course: '', semester: '', email: '', name: '', exam_type: '', comments: '' })
   const [customCourse, setCustomCourse] = useState('')
+  const [customSemester, setCustomSemester] = useState('')
   const [file, setFile] = useState(null)
   const [uploading, setUploading] = useState(false)
   const [error, setError] = useState(null)
@@ -20,11 +21,12 @@ const Upload = () => {
 
     try {
       const courseValue = form.course === 'Other' ? customCourse : form.course
+      const semesterValue = form.semester === 'Other' ? customSemester : form.semester
       
       // Upload file to Supabase Storage
       const fileExt = file.name.split('.').pop()
       const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`
-      const filePath = `${courseValue}/${form.semester}/${fileName}`
+      const filePath = `${courseValue}/${semesterValue}/${fileName}`
 
       const { error: uploadError } = await supabase.storage
         .from('exam-files')
@@ -42,7 +44,7 @@ const Upload = () => {
         .from('uploads')
         .insert({
           course: courseValue,
-          semester: form.semester,
+          semester: semesterValue,
           exam_type: form.exam_type,
           uploader_name: form.name,
           uploader_email: form.email,
@@ -57,6 +59,7 @@ const Upload = () => {
       setShowSuccess(true)
       setForm({ course: '', semester: '', email: '', name: '', exam_type: '', comments: '' })
       setCustomCourse('')
+      setCustomSemester('')
       setFile(null)
       e.target.reset()
     } catch (err) {
@@ -114,8 +117,8 @@ const Upload = () => {
             </select>
           </label>
           {form.semester === 'Other' && (
-            <label>Specify course
-              <input name='customCourse' value={customCourse} onChange={e => setCustomCourse(e.target.value)} placeholder='e.g., Fall 2020' required />
+            <label>Specify Semester
+              <input type='text' name='customSemester' value={customSemester} onChange={e => setCustomSemester(e.target.value)} placeholder='e.g., Fall 2020' required />
             </label>
           )}
           <label>Exam Type
