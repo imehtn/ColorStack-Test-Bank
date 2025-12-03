@@ -79,21 +79,31 @@ const Upload = () => {
           <label>Course
             <select name='course' value={form.course} onChange={handleChange} required>
               <option value='' disabled>Choose a course</option>
-              <option>PHYSICS 1248</option>
-              <option>PHYSICS 1249</option>
+              <option>CSE 1223</option>
+              <option>CSE 2221</option>
+              <option>CSE 2231</option>
+              <option>CSE 2321</option>
+              <option>CSE 2331</option>
+              <option>CSE 2421</option>
+              <option>ECE 2060</option>
+              <option>ECE 2360</option>
               <option>MATH 1151</option>
               <option>MATH 1152</option>
               <option>MATH 2153</option>
+              <option>MATH 1172</option>
+              <option>PHYSICS 1250</option>
+              <option>STATS 3470</option>
               <option value='Other'>Other (specify)</option>
             </select>
           </label>
           {form.course === 'Other' && (
-            <label>Specify course
-              <input name='customCourse' value={customCourse} onChange={e => setCustomCourse(e.target.value)} placeholder='e.g., BIO 110' required />
+            <label>Specify Course
+              <input type='text' name='customCourse' value={customCourse} onChange={e => setCustomCourse(e.target.value)} placeholder='e.g., BIO 1110' required />
             </label>
           )}
           <label>Semester
-            <select name='semester' value={form.semester} onChange={handleChange} placeholder='e.g., Spring 2024' >
+            <select name='semester' value={form.semester} onChange={handleChange} required>
+              <option value='' disabled>Choose a semester</option>
               <option>Fall 2025</option>
               <option>Spring 2025</option>
               <option>Summer 2025</option>
@@ -105,7 +115,7 @@ const Upload = () => {
           </label>
           {form.semester === 'Other' && (
             <label>Specify course
-              <input name='customCourse' value={customCourse} onChange={e => setCustomCourse(e.target.value)} placeholder='e.g., fall 2025' required />
+              <input name='customCourse' value={customCourse} onChange={e => setCustomCourse(e.target.value)} placeholder='e.g., Fall 2020' required />
             </label>
           )}
           <label>Exam Type
